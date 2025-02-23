@@ -1,0 +1,105 @@
+.memory_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+  font-family: 'Outfit', sans-serif;
+  color:#fcfcfc;
+  padding:50px 0;
+}
+
+.memory_header{
+    font-size:30px;
+}
+
+.memory_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+  column-gap: 20px;
+  width: fit-content;
+}
+
+
+.mcard {
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+
+.mcard.flipped,
+.mcard.matched {
+  transform: rotateY(180deg);
+}
+
+.mcard.matched {
+  pointer-events: none; /* Disable clicking matched cards */
+}
+
+.mcard_face {
+  width: 100%;
+  max-width: 150px;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.mcard .mcard_front {
+  transform: rotateY(180deg);
+}
+
+.mcard.flipped .mcard_front,
+.mcard.matched .mcard_front {
+  transform: rotateY(0deg);
+  visibility: visible; /* Ensure matched cards stay visible */
+  opacity: 1; /* Ensure opacity is fully visible */
+}
+
+.mcard .mcard_back {
+  background: rgb(32, 30, 43);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+}
+
+.mcard.flipped .mcard_back {
+  transform: rotateY(-180deg);
+}
+
+.mcard.matched .mcard_back {
+  display: none;
+}
+
+.memory_text{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    font-size:24px;
+    text-align: center;
+}
+
+.memory_button{
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-family: 'Outfit', sans-serif;
+  background-color: #fcfcfc;
+  cursor: pointer;
+  transition:all 0.7s ease-in-out;
+}
+
+.memory_button:hover{
+    background-color: #d0cbcb;
+  }
+
+  @media(max-width:700px){
+    .memory_cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
