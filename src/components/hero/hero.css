@@ -1,0 +1,130 @@
+.hero {
+  background-image: url("../assets/mini-arcade-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  opacity: 0.7;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  font-family: "Outfit", sans-serif;
+}
+
+.hero_content {
+  min-height: 600px;
+  border: 40px rgb(48, 48, 51) solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(10, 36, 73, 0.4);
+  color: #fcfcfc;
+  padding: 0 20px;
+}
+
+.hero_modal {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero_header {
+  font-size: 70px;
+}
+
+.hero_subtitle {
+  font-size: 30px;
+}
+
+.hero_game_button {
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-family: "Outfit", sans-serif;
+  background-color: #fcfcfc;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out;
+  color: rgba(23, 66, 127, 1);
+}
+
+.hero_game_button:hover {
+  background-color: #d0cbcb;
+}
+
+.hero_games {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 70px;
+}
+
+.hero_back_button {
+  color: #fcfcfc;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hero_list {
+  display: flex;
+  gap: 70px;
+  list-style-type: none;
+}
+
+.hero_list a {
+  color: #fcfcfc;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.hero_game_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero_game_img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .hero_content {
+    border: 35px rgb(48, 48, 51) solid;
+  }
+  .hero {
+    padding: 0;
+  }
+
+  .hero_content {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 750px) {
+  .hero_content {
+    border: 30px rgb(48, 48, 51) solid;
+  }
+
+  .hero_header {
+    font-size: 60px;
+  }
+
+  .hero_sutitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero_content {
+    min-height: 400px;
+  }
+  .hero_header {
+    font-size: 50px;
+  }
+}
