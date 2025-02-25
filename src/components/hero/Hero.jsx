@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import TicImg from "../assets/tictactoe.png";
 import MemoryImg from "../assets/memory.png";
+import RockImg from "../assets/rockpaperscissors.png";
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(true);
@@ -10,6 +11,12 @@ const Hero = () => {
   const gameLinks = [
     { key: 0, href: "/tictactoe", text: "Tic Tac Toe", imgsrc: TicImg },
     { key: 1, href: "/cardmemory", text: "Memory Card", imgsrc: MemoryImg },
+    {
+      key: 2,
+      href: "/rockpaperscissors",
+      text: "Rock Paper Scissors",
+      imgsrc: RockImg,
+    },
   ];
 
   return (
