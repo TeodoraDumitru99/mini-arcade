@@ -213,6 +213,10 @@
   .hero_subtitle {
     font-size: 20px;
   }
+
+  .hero_game_button {
+    min-width: 100%;
+  }
 }
 
 @media (max-width: 450px) {
@@ -225,10 +229,10 @@
     right: 25px;
   }
 
-  .hero_game_button {
+  /* .hero_game_button {
     font-size: 18px;
     padding: 10px 20px;
-  }
+  } */
 }
 
 @media (max-width: 350px) {
