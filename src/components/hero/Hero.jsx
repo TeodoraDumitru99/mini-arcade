@@ -23,17 +23,18 @@ const Hero = () => {
     <section className="hero">
       <div className="wrapper">
         <div className="hero_content">
+          <div className="hero_power_light"></div>
           {modalOpen ? (
             <div className="hero_modal">
               <h1 className="hero_header">MINI ARCADE</h1>
-              <h2 className="hero_sutitle">
+              <h2 className="hero_subtitle">
                 Revisit your favourite classic games
               </h2>
               <button
                 className="hero_game_button"
                 onClick={() => setModalOpen(false)}
               >
-                Games
+                PLAY
               </button>
             </div>
           ) : (

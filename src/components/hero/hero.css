@@ -3,26 +3,77 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   opacity: 0.7;
   justify-content: center;
   align-items: center;
-  padding: 100px;
+  padding: 0 100px;
   font-family: "Outfit", sans-serif;
 }
 
 .hero_content {
   min-height: 600px;
-  border: 40px rgb(48, 48, 51) solid;
-  border-radius: 5px;
+  border: 50px #b3a78f solid;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-color: rgba(10, 36, 73, 0.4);
+  background-color: rgba(9, 88, 42, 0.3);
   color: #fcfcfc;
   padding: 0 20px;
+  box-shadow: inset -5px -5px 15px rgba(32, 32, 32, 0.6),
+    inset 5px 5px 15px rgba(255, 255, 255, 0.1),
+    10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero_content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(19, 19, 19, 0.1) 0px,
+    rgba(19, 19, 19, 0.1) 2px,
+    transparent 3px,
+    transparent 4px
+  );
+}
+
+.hero_content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  opacity: 0.3;
+}
+
+.hero_power_light {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid rgb(142, 11, 11);
+  position: absolute;
+  bottom: -30px;
+  right: 70px;
+  box-shadow: 0px 0px 8px red;
+  animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 .hero_modal {
@@ -34,22 +85,27 @@
 
 .hero_header {
   font-size: 70px;
+  color: #0aff0a;
+  text-shadow: 0px 0px 5px #0aff0a, 0px 0px 10px rgba(10, 255, 10, 0.7);
 }
 
 .hero_subtitle {
   font-size: 30px;
+  text-shadow: 0px 0px 2px rgb(252, 252, 252),
+    0px 0px 5px rgb(252, 252, 252, 0.5);
 }
 
 .hero_game_button {
   font-size: 20px;
   padding: 15px 30px;
   border-radius: 5px;
-  font-weight: 400;
+  font-weight: 600;
   font-family: "Outfit", sans-serif;
   background-color: #fcfcfc;
   cursor: pointer;
   transition: all 0.7s ease-in-out;
   color: rgba(23, 66, 127, 1);
+  z-index: 10;
 }
 
 .hero_game_button:hover {
@@ -67,6 +123,7 @@
   color: #fcfcfc;
   font-size: 20px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .hero_list {
@@ -94,9 +151,6 @@
 }
 
 @media (max-width: 1200px) {
-  .hero_content {
-    border: 35px rgb(48, 48, 51) solid;
-  }
   .hero {
     padding: 0;
   }
@@ -108,15 +162,26 @@
 
 @media (max-width: 750px) {
   .hero_content {
-    border: 30px rgb(48, 48, 51) solid;
+    border: 35px #b3a78f solid;
+  }
+
+  .hero_power_light {
+    bottom: -25px;
+    right: 50px;
+  }
+
+  .hero_modal {
+    gap: 40px;
   }
 
   .hero_header {
     font-size: 60px;
+    text-align: center;
   }
 
-  .hero_sutitle {
-    font-size: 20px;
+  .hero_subtitle {
+    font-size: 25px;
+    text-align: center;
   }
 }
 
@@ -126,5 +191,48 @@
   }
   .hero_header {
     font-size: 50px;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero_content {
+    border: 30px #b3a78f solid;
+  }
+
+  .hero_power_light {
+    width: 9px;
+    height: 9px;
+    bottom: -20px;
+    right: 40px;
+  }
+
+  .hero_modal {
+    gap: 35px;
+  }
+
+  .hero_subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero_content {
+    border: 25px #b3a78f solid;
+  }
+
+  .hero_power_light {
+    bottom: -17px;
+    right: 25px;
+  }
+
+  .hero_game_button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .hero_modal {
+    gap: 30px;
   }
 }
