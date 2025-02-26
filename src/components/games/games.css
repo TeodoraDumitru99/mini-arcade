@@ -1,0 +1,121 @@
+.games {
+  background-image: url("../assets/mini-arcade-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100dvh;
+  display: flex;
+  opacity: 0.7;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  font-family: "Outfit", sans-serif;
+}
+
+.display_power_light.games_light {
+  background-color: #0aff0a;
+  box-shadow: 0px 0px 8px #0aff0a;
+}
+
+.games_content {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.games_header {
+  font-size: 40px;
+  text-align: center;
+}
+
+.games_games {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 70px;
+}
+
+.games_back_button {
+  color: #fcfcfc;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.games_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 70px;
+  list-style-type: none;
+  z-index: 1;
+  width: fit-content;
+}
+
+.games_list a {
+  color: #fcfcfc;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.games_game_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.games_game_img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+.games_name {
+  font-size: 20px;
+  max-width: 100px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .games {
+    padding: 0;
+  }
+}
+
+@media (max-width: 750px) {
+  .games_header {
+    font-size: 30px;
+  }
+
+  .games_name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .games_list {
+    column-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .games_games {
+align-items:center;
+  }
+
+  .games_list {
+    row-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .games_game_group{
+    gap:10px;
+  }
+
+  .games_game_img {
+    max-width: 130px;
+  }
+}

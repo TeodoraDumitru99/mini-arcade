@@ -12,71 +12,11 @@
   font-family: "Outfit", sans-serif;
 }
 
-.hero_content {
-  min-height: 600px;
-  border: 50px #b3a78f solid;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
+.display.hero_display{
   justify-content: center;
-  position: relative;
-  background-color: rgba(9, 88, 42, 0.3);
-  color: #fcfcfc;
-  padding: 0 20px;
-  box-shadow: inset -5px -5px 15px rgba(32, 32, 32, 0.6),
-    inset 5px 5px 15px rgba(255, 255, 255, 0.1),
-    10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.hero_content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    rgba(19, 19, 19, 0.1) 0px,
-    rgba(19, 19, 19, 0.1) 2px,
-    transparent 3px,
-    transparent 4px
-  );
-}
-
-.hero_content::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
-  opacity: 0.3;
-}
-
-.hero_power_light {
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
-  border: 1px solid rgb(142, 11, 11);
-  position: absolute;
-  bottom: -30px;
-  right: 70px;
-  box-shadow: 0px 0px 8px red;
-  animation: blink 2s infinite alternate;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-.hero_modal {
+.hero_content {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -106,71 +46,21 @@
   transition: all 0.7s ease-in-out;
   color: rgba(23, 66, 127, 1);
   z-index: 10;
+  text-decoration: none;
 }
 
 .hero_game_button:hover {
   background-color: #d0cbcb;
 }
 
-.hero_games {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 70px;
-}
-
-.hero_back_button {
-  color: #fcfcfc;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.hero_list {
-  display: flex;
-  gap: 70px;
-  list-style-type: none;
-}
-
-.hero_list a {
-  color: #fcfcfc;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.hero_game_group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero_game_img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-}
-
 @media (max-width: 1200px) {
   .hero {
     padding: 0;
-  }
-
-  .hero_content {
-    min-height: 500px;
   }
 }
 
 @media (max-width: 750px) {
   .hero_content {
-    border: 35px #b3a78f solid;
-  }
-
-  .hero_power_light {
-    bottom: -25px;
-    right: 50px;
-  }
-
-  .hero_modal {
     gap: 40px;
   }
 
@@ -186,9 +76,6 @@
 }
 
 @media (max-width: 650px) {
-  .hero_content {
-    min-height: 400px;
-  }
   .hero_header {
     font-size: 50px;
   }
@@ -196,17 +83,6 @@
 
 @media (max-width: 550px) {
   .hero_content {
-    border: 30px #b3a78f solid;
-  }
-
-  .hero_power_light {
-    width: 9px;
-    height: 9px;
-    bottom: -20px;
-    right: 40px;
-  }
-
-  .hero_modal {
     gap: 35px;
   }
 
@@ -216,27 +92,12 @@
 
   .hero_game_button {
     min-width: 100%;
+    text-align:center;
   }
-}
-
-@media (max-width: 450px) {
-  .hero_content {
-    border: 25px #b3a78f solid;
-  }
-
-  .hero_power_light {
-    bottom: -17px;
-    right: 25px;
-  }
-
-  /* .hero_game_button {
-    font-size: 18px;
-    padding: 10px 20px;
-  } */
 }
 
 @media (max-width: 350px) {
-  .hero_modal {
+  .hero_content {
     gap: 30px;
   }
 }
