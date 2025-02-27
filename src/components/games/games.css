@@ -1,5 +1,5 @@
 .games {
-  background-image: url("../assets/mini-arcade-bg.jpg");
+  background-image: url("../assets/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,6 +15,10 @@
 .display_power_light.games_light {
   background-color: #0aff0a;
   box-shadow: 0px 0px 8px #0aff0a;
+}
+
+.display.games_display {
+  background-color: rgb(21, 20, 28);
 }
 
 .games_content {
@@ -103,7 +107,7 @@
 
 @media (max-width: 450px) {
   .games_games {
-align-items:center;
+    align-items: center;
   }
 
   .games_list {
@@ -111,8 +115,8 @@ align-items:center;
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .games_game_group{
-    gap:10px;
+  .games_game_group {
+    gap: 10px;
   }
 
   .games_game_img {

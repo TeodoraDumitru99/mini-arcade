@@ -1,39 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 *,
-*::after,*::before{
-  box-sizing:border-box;
-  margin:0;
-  border:0;
-  padding:0;
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
-body{
-  font-family:'Outift', sans-serif;
-  font-style:normal;
-  background-color:rgb(21, 20, 28);
+body {
+  font-family: "Outift", sans-serif;
+  font-style: normal;
+  background-color: rgb(21, 20, 28);
 }
 
-.wrapper{
-max-width:1600px;
-width:100%;
-margin:0 auto;
-padding:0 30px;
+.wrapper {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.display_wrapper {
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .display {
-  min-height: 600px;
-  border: 50px #b3a78f solid;
-  border-radius: 15px;
+  min-height: 80dvh;
+  /* border: 40px #83858E solid; */
+  border-image: radial-gradient(
+      circle,
+      rgba(56, 56, 64, 1) 2%,
+      rgba(91, 92, 98, 1) 10%,
+      rgba(131, 133, 142, 1) 19%,
+      rgba(150, 151, 161, 1) 38%,
+      rgba(168, 169, 177, 1) 41%,
+      rgb(124, 126, 138) 43%,
+      rgba(91, 92, 98, 1) 51%,
+      rgba(111, 113, 122, 1) 57%,
+      rgba(135, 138, 148, 1) 59%,
+      rgb(83, 83, 92) 100%
+    )
+    1;
+  border-width: 40px;
+  border-style: solid;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: rgba(9, 88, 42, 0.3);
   color: #fcfcfc;
   padding: 0 20px;
   box-shadow: inset -5px -5px 15px rgba(32, 32, 32, 0.6),
     inset 5px 5px 15px rgba(255, 255, 255, 0.1),
-    10px 10px 20px rgba(0, 0, 0, 0.5);
+    10px 10px 20px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.7),
+    /* Outer shadow*/ 0px -4px 8px rgba(255, 255, 255, 0.2); /*Top highlight */
+  border-radius: 15px;
+  clip-path: inset(0 round 15px);
 }
 
 .display::before {
@@ -44,8 +67,8 @@ padding:0 30px;
   width: 100%;
   height: 100%;
   background: repeating-linear-gradient(
-    rgba(19, 19, 19, 0.1) 0px,
-    rgba(19, 19, 19, 0.1) 2px,
+    rgba(19, 19, 19, 0.2) 0px,
+    rgba(19, 19, 19, 0.2) 2px,
     transparent 3px,
     transparent 4px
   );
@@ -69,7 +92,7 @@ padding:0 30px;
   border-radius: 50%;
   border: 1px solid rgb(60, 51, 51);
   position: absolute;
-  bottom: -30px;
+  bottom: -25px;
   right: 70px;
   box-shadow: 0px 0px 8px red;
   animation: blink 2s infinite alternate;
@@ -84,51 +107,38 @@ padding:0 30px;
   }
 }
 
-@media (max-width: 1200px) {
-
-  .display {
-    min-height: 500px;
-  }
-}
-
 @media (max-width: 750px) {
   .display {
-    border: 35px #b3a78f solid;
+    border: 30px #83858e solid;
+    min-height: 70dvh;
   }
 
   .display_power_light {
-    bottom: -25px;
+    bottom: -20px;
     right: 50px;
-  }
-}
-
-@media (max-width: 650px) {
-  .display {
-    min-height: 400px;
   }
 }
 
 @media (max-width: 550px) {
   .display {
-    border: 30px #b3a78f solid;
+    border: 25px #83858e solid;
   }
 
   .display_power_light {
     width: 9px;
     height: 9px;
-    bottom: -20px;
+    bottom: -17px;
     right: 40px;
   }
 }
 
 @media (max-width: 450px) {
   .display {
-    border: 25px #b3a78f solid;
+    border: 20px #83858e solid;
   }
 
   .display_power_light {
-    bottom: -17px;
+    bottom: -15px;
     right: 25px;
   }
 }
-
