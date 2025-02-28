@@ -1,5 +1,7 @@
 import "./tic_tac_toe.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import ArrowImg from "../assets/arrow.png";
 
 const TicTacToe = () => {
   const Square = ({ squareValue, onSquareClick, isWinning }) => {
@@ -52,9 +54,13 @@ const TicTacToe = () => {
 
   return (
     <section className="tic_tac_toe">
-      <div className="wrapper">
+      <div className="wrapper tic_wrapper">
+        <Link to="/games" className="arrow_back_button">
+          <img src={ArrowImg} alt="Back" className="back_arrow" />
+        </Link>
         <div className="tic_content">
-          <div className="tic_status">{status}</div>
+          <h1 className="header">Tic Tac Toe</h1>
+          <div className="subtitle">{status}</div>
           <div className="tic_board">
             {squares.map((square, index) => (
               <Square
@@ -65,9 +71,11 @@ const TicTacToe = () => {
               />
             ))}
           </div>
-          <button className="tic_reset_button" onClick={resetGame}>
-            Reset
-          </button>
+          {(winner || isDraw) && (
+            <button className="reset_button" onClick={resetGame}>
+              Reset
+            </button>
+          )}
         </div>
       </div>
     </section>
