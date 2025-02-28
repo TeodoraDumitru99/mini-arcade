@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./memory.css";
 import CardFace1 from "../assets/card2.png";
 import CardFace2 from "../assets/card3.png";
 import CardFace3 from "../assets/card4.png";
+import ArrowImg from "../assets/arrow.png";
 
 const cardData = [
   { id: 0, image: CardFace1, pairId: 1 },
@@ -72,10 +74,16 @@ const Memory = () => {
   }, [matched, cards]);
 
   return (
-    <section className="memory">
-      <div className="wrapper">
-        <div className="memory_content">
-          <h2 className="memory_header">Memory Card Game</h2>
+    <section className="memory section">
+      <div className="wrapper game_wrapper">
+        <Link to="/games" className="arrow_back_button">
+          <img src={ArrowImg} alt="Back" className="back_arrow" />
+        </Link>
+        <div className="game_content memory_content">
+          <h2 className="header memory_header">Memory Game</h2>
+          <div className="subtitle memory_subtitle">
+            {won ? <p>Won in {moves} moves!</p> : <p>Moves: {moves}</p>}
+          </div>
           <div className="memory_cards">
             {cards.map((card) => {
               const isFlipped =
@@ -96,13 +104,9 @@ const Memory = () => {
               );
             })}
           </div>
-          <div className="memory_text">
-            <p className="memory_moves">Moves: {moves}</p>
-            {won && <p className="memory_status">Won in {moves} moves!</p>}
-            <button className="memory_button" onClick={startNewGame}>
-              New Game
-            </button>
-          </div>
+          <button className="reset_button" onClick={startNewGame}>
+            Reset
+          </button>
         </div>
       </div>
     </section>

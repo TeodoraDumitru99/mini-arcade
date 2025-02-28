@@ -1,15 +1,6 @@
-.memory_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.memory_subtitle{
+  display:flex;
   gap:20px;
-  font-family: 'Outfit', sans-serif;
-  color:#fcfcfc;
-  padding:50px 0;
-}
-
-.memory_header{
-    font-size:30px;
 }
 
 .memory_cards {
@@ -20,7 +11,6 @@
   column-gap: 20px;
   width: fit-content;
 }
-
 
 .mcard {
   width: 150px;
@@ -75,31 +65,34 @@
   display: none;
 }
 
-.memory_text{
-    display:flex;
-    flex-direction: column;
-    gap:20px;
-    font-size:24px;
-    text-align: center;
-}
-
-.memory_button{
-  font-size: 20px;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-weight: 400;
-  font-family: 'Outfit', sans-serif;
-  background-color: #fcfcfc;
-  cursor: pointer;
-  transition:all 0.7s ease-in-out;
-}
-
-.memory_button:hover{
-    background-color: #d0cbcb;
-  }
-
-  @media(max-width:700px){
+  @media(max-width:600px){
     .memory_cards {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mcard {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  @media(max-width:500px){
+    .memory_cards {
+      row-gap: 15px;
+  column-gap: 15px;
+    }
+
+    .mcard {
+      width: 120px;
+      height: 120px;
+    }
+
+    .memory_header{
+      max-width:200px;
+      text-align:center;
+    }
+
+    .memory_content {
+      gap: 25px;
     }
   }
