@@ -223,4 +223,8 @@ body {
   .subtitle {
     font-size: 20px;
   }
+
+  .reset_button {
+    width:100%;
+    }
 }
