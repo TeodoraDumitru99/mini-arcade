@@ -30,7 +30,6 @@
 }
 
 .games_header {
-  font-size: 40px;
   text-align: center;
 }
 
@@ -47,6 +46,7 @@
   cursor: pointer;
   z-index: 1;
   text-decoration: none;
+  padding:10px 0;
 }
 
 .games_list {
@@ -89,10 +89,6 @@
 }
 
 @media (max-width: 750px) {
-  .games_header {
-    font-size: 30px;
-  }
-
   .games_name {
     font-size: 18px;
   }

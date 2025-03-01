@@ -3,6 +3,7 @@ import "./games.css";
 import TicImg from "../assets/tictactoe.png";
 import MemoryImg from "../assets/memory.png";
 import RockImg from "../assets/rockpaperscissors.png";
+import ArrowImg from "../assets/arrow.png";
 
 const Games = () => {
   const gameLinks = [
@@ -22,10 +23,14 @@ const Games = () => {
         <div className="display games_display">
           <div className="display_power_light games_light"></div>
           <div className="games_content">
-            <h2 className="games_header">Games</h2>
+            <h2 className="header games_header">Games</h2>
             <div className="games_games">
-              <Link to="/" className="games_back_button">
-                ◄ Back
+              <Link to="/">
+                <img
+                  src={ArrowImg}
+                  alt="Back"
+                  className="back_arrow games_back_button"
+                />
               </Link>
               <ul className="games_list">
                 {gameLinks.map((gameLink) => (
