@@ -1,8 +1,10 @@
 import "../rock_paper_scissor/rock_paper_scissor.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import RockImg from "../assets/rock.png";
 import PaperImg from "../assets/paper.png";
 import ScissorsImg from "../assets/scissors.png";
+import ArrowImg from "../assets/arrow.png";
 
 const choices = [
   { name: "Rock", imgsrc: RockImg },
@@ -60,59 +62,60 @@ const RockPaperScissors = () => {
   };
 
   return (
-    <section className="rps">
-      <div className="wrapper">
-        <div className="rps_content">
-          <h2 className="rps_header">Rock Paper Scissors</h2>
-          <div className="rps_status">
-            <div className="rps_scoreboard">
+    <section className="rps section">
+      <div className="wrapper game_wrapper">
+        <Link to="/games" className="arrow_back_button">
+          <img src={ArrowImg} alt="Back" className="back_arrow" />
+        </Link>
+        <div className="game_content rps_content">
+          <h2 className="header rps_header">Rock Paper Scissors</h2>
+          <div className="subtitle rps_subtitle">
+            <div className="rps_status">
+              <p>You/Computer:</p>
               <div>
-                You: <strong>{playerScore}</strong>
-              </div>
-              <div>
-                Computer: <strong>{computerScore}</strong>
+                {playerScore}/{computerScore}
               </div>
             </div>
-
             {winner && (
-              <div className="rps_winner">
-                <span>Winner:</span>
-                <strong>{winner}</strong>
+              <div className="rps_status">
+                <strong>{winner} </strong>
+                <p> won!</p>
               </div>
             )}
           </div>
           <div className="rps_choices">
             {choices.map((choice) => (
-              <div key={choice.name} className="rps_choice">
+              <div
+                key={choice.name}
+                className={`rps_choice ${winner ? "rps_won" : ""}`}
+                onClick={() => !winner && playGame(choice)}
+              >
                 <img
                   src={choice.imgsrc}
                   alt={choice.name}
                   className="rps_choice_img"
-                  onClick={() => playGame(choice)}
                 />
-                <button
+                <span
                   className="rps_choice_button"
                   onClick={() => !winner && playGame(choice)}
                   disabled={!!winner}
                 >
                   {choice.name}
-                </button>
+                </span>
               </div>
             ))}
           </div>
           {playerChoice && (
             <div className="rps_results">
-              <p className="rps_result">
-                Your Choice: <strong>{playerChoice.name}</strong>
-              </p>
-              <p className="rps_result">
-                Computer's Choice: <strong>{computerChoice.name}</strong>
+              <p className="subtitle">Your Choice: {playerChoice.name}</p>
+              <p className="subtitle">
+                Computer's Choice: {computerChoice.name}
               </p>
             </div>
           )}
           {winner && (
-            <button className="rps_restart" onClick={restartGame}>
-              Restart
+            <button className="reset_button" onClick={restartGame}>
+              Reset
             </button>
           )}
         </div>

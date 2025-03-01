@@ -1,135 +1,155 @@
-.rps_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  font-family: "Outfit", sans-serif;
-  color: #fcfcfc;
-  padding: 50px 0;
-}
-
 .rps_header {
   font-size: 40px;
 }
 
-.rps_status{
-  display:flex;
-  gap:30px;
+.rps_subtitle {
+  display: flex;
+  gap: 30px;
 }
 
-.rps_scoreboard{
-  font-size:18px;
+.rps_status {
+  display: flex;
+  gap: 5px;
+}
+
+.rps_scoreboard {
+  font-size: 18px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.rps_winner{
-display:flex;
-flex-direction: column;
-text-align:center;
-font-size:18px;
-}
-
-.rps_choices{
-display:flex;
-width:100%;
-max-width:600px;
-justify-content: space-between;
-}
-
-.rps_results{
-  display:flex;
+.rps_winner {
+  display: flex;
   flex-direction: column;
   text-align: center;
-  font-size:18px;
+  font-size: 18px;
 }
 
-.rps_choice{
-  display:flex;
+.rps_choices {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.rps_results {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+}
+
+.rps_choice {
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items:center;
-  gap:70px;
-}
-
-.rps_choice_img{
-    width:100%;
-    max-width:100px;
-    height:auto;
-}
-
-.rps_choice_button{
-  font-size: 20px;
-  padding: 15px 0;
-  min-width:130px;
-  border-radius: 5px;
-  font-weight: 400;
-  font-family: 'Outfit', sans-serif;
-  background-color: #fcfcfc;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  border: 3px solid #fcfcfc;
+  border-radius: 20px;
   cursor: pointer;
-  transition:all 0.7s ease-in-out;
 }
 
-.rps_choice_button:hover{
-  background-color: #d0cbcb;
+.rps_choice.rps_won {
+  pointer-events: none;
+  border: 3px solid #6d6d6d;
+  cursor: default;
 }
 
-.rps_choice_button:disabled{
-  background-color:#d0cbcb;
-  cursor:default;
+.rps_won .rps_choice_img {
+  filter: grayscale(100%);
+  opacity: 0.3;
 }
 
-.rps_restart{
+.rps_won .rps_choice_button {
+  color: #6d6d6d;
+}
+
+.rps_choice_img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+
+.rps_choice_button {
+  font-size: 20px;
+}
+
+.rps_restart {
   font-size: 18px;
   padding: 10px 15px;
   border-radius: 5px;
   font-weight: 400;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   background-color: #fcfcfc;
   cursor: pointer;
-  transition:all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
-.rps_restart:hover{
-  background-color:#d0cbcb ;
+.rps_restart:hover {
+  background-color: #d0cbcb;
 }
 
-@media(max-width:750px){
+@media (max-width: 750px) {
   .rps_header {
     font-size: 30px;
   }
 
-  .rps_choice_img{
-    max-width:80px;
+  .rps_choice_img {
+    max-width: 80px;
+  }
 }
 
-.rps_choice_button{
-  padding:10px 0;
-  min-width:100px;
-  font-size: 18px;
-}
-}
-
-@media(max-width:450px){
-  .rps_choice_img{
-    max-width:60px;
+@media (max-width: 600px) {
+  .rps_choices {
+    padding: 0;
+  }
 }
 
-.rps_choice_button{
-  min-width:80px;
-}
+@media (max-width: 550px) {
+  .rps_choice {
+    padding: 15px;
+  }
+
+  .rps_choice_img {
+    max-width: 75px;
+  }
+
+  .rps_choice_button {
+    font-size: 18px;
+  }
 }
 
-@media(max-width:350px){
-.rps_header{
-  text-align: center;
+@media (max-width: 450px) {
+  .rps_header {
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .rps_choice_img {
+    max-width: 70px;
+  }
+
+  .rps_choice_button {
+    font-size: 16px;
+  }
 }
 
-  .rps_choice_img{
-    max-width:55px;
+@media (max-width: 390px) {
+  .rps_choice_img {
+    max-width: 55px;
+  }
 }
 
-.rps_choice_button{
-  padding:10px 0;
-  min-width:75px;
-}
+@media (max-width: 350px) {
+  .rps_choice_img {
+    max-width: 55px;
+  }
+
+  .rps_choice {
+    padding: 12px;
+  }
 }
