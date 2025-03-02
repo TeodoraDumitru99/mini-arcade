@@ -20,8 +20,8 @@ const Games = () => {
   return (
     <section className="games">
       <div className="wrapper">
+        <div className="display_power_light games_light"></div>
         <div className="display games_display">
-          <div className="display_power_light games_light"></div>
           <div className="games_content">
             <h2 className="header games_header">Games</h2>
             <div className="games_games">

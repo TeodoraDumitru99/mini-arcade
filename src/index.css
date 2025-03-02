@@ -29,19 +29,14 @@ body {
 
 .display {
   min-height: 80dvh;
-  /* border: 40px #83858E solid; */
   border-image: radial-gradient(
       circle,
-      rgba(56, 56, 64, 1) 2%,
-      rgba(91, 92, 98, 1) 10%,
-      rgba(131, 133, 142, 1) 19%,
-      rgba(150, 151, 161, 1) 38%,
-      rgba(168, 169, 177, 1) 41%,
-      rgb(124, 126, 138) 43%,
-      rgba(91, 92, 98, 1) 51%,
-      rgba(111, 113, 122, 1) 57%,
-      rgba(135, 138, 148, 1) 59%,
-      rgb(83, 83, 92) 100%
+      rgba(21, 20, 28, 1) 10%,
+      rgba(63, 66, 83, 1) 20%,
+      rgba(28, 28, 31, 1) 31%,
+      rgba(75, 75, 85, 1) 53%,
+      rgba(160, 162, 177, 1) 56%,
+      rgba(45, 46, 53, 1) 68%
     )
     1;
   border-width: 40px;
@@ -74,7 +69,7 @@ body {
   );
 }
 
-.display::after {
+/* .display::after {
   content: "";
   position: absolute;
   top: 0;
@@ -83,7 +78,7 @@ body {
   height: 100%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
   opacity: 0.3;
-}
+} */
 
 .display_power_light {
   width: 10px;
@@ -92,10 +87,12 @@ body {
   border-radius: 50%;
   border: 1px solid rgb(60, 51, 51);
   position: absolute;
-  bottom: -25px;
-  right: 70px;
+  right: 280px;
+  bottom: 13%;
+  transform: translateY(50%);
   box-shadow: 0px 0px 8px red;
   animation: blink 2s infinite alternate;
+  z-index: 2;
 }
 
 @keyframes blink {
@@ -107,7 +104,7 @@ body {
   }
 }
 
-.section{
+.section {
   font-family: "Outfit", sans-serif;
   background-image: url("./components/assets/bg_dark.png");
   background-size: cover;
@@ -118,7 +115,7 @@ body {
   display: flex;
 }
 
-.game_wrapper{
+.game_wrapper {
   display: flex;
   justify-content: center;
 }
@@ -169,6 +166,13 @@ body {
   top: 65px;
 }
 
+@media (max-width: 1200px) {
+  .display_power_light {
+    right: 180px;
+    bottom: 13%;
+  }
+}
+
 @media (max-width: 750px) {
   .display {
     border-width: 30px;
@@ -176,8 +180,8 @@ body {
   }
 
   .display_power_light {
-    bottom: -20px;
-    right: 50px;
+    right: 180px;
+    bottom: 17%;
   }
 
   .header {
@@ -185,16 +189,16 @@ body {
   }
 }
 
+@media (max-width: 650px) {
+  .display_power_light {
+    right: 100px;
+    bottom: 17%;
+  }
+}
+
 @media (max-width: 550px) {
   .display {
     border-width: 25px;
-  }
-
-  .display_power_light {
-    width: 9px;
-    height: 9px;
-    bottom: -17px;
-    right: 40px;
   }
 
   .back_arrow {
@@ -207,13 +211,12 @@ body {
     padding: 0 20px;
   }
 
-  .display {
-    border-width: 20px;
+  .display_power_light {
+    display: none;
   }
 
-  .display_power_light {
-    bottom: -15px;
-    right: 25px;
+  .display {
+    border-width: 20px;
   }
 
   .header {
@@ -225,6 +228,6 @@ body {
   }
 
   .reset_button {
-    width:100%;
-    }
+    width: 100%;
+  }
 }
